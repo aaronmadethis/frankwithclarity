@@ -17,14 +17,14 @@ module.exports = {
 
 	// Style options.
 	styleSRC: './assets/css/style.scss', // Path to main .scss file.
-	styleDestination: './dist/', // Path to place the compiled CSS file. Default set to root folder.
+	styleDestination: './dist/css/', // Path to place the compiled CSS file. Default set to root folder.
 	outputStyle: 'compact', // Available options → 'compact' or 'compressed' or 'nested' or 'expanded'
 	errLogToConsole: true,
 	precision: 10,
 
 	// Style Login options.
 	styleLoginSRC: './assets/css/styles-login.scss', // Path to main .scss file.
-	styleLoginDestination: './dist/', // Path to place the compiled CSS file. Default set to root folder.
+	styleLoginDestination: './dist/css/', // Path to place the compiled CSS file. Default set to root folder.
 	outputLoginStyle: 'compact', // Available options → 'compact' or 'compressed' or 'nested' or 'expanded'
 
 	// JS Vendor options.
