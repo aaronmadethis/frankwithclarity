@@ -341,6 +341,17 @@ gulp.task( 'clearCache', function( done ) {
 	return cache.clearAll( done );
 });
 
+/**
+ * Task: `video`.
+ *
+ * Copy over video files
+ */
+gulp.task( 'video', () => {
+	return gulp
+		.src( config.videoSRC )
+		.pipe( gulp.dest( config.videoDST ) )
+		.pipe( notify({ message: '\n\n✅  ===> VIDEO — completed!\n', onLast: true }) );
+});
 
 /**
  * Watch Tasks.
@@ -349,7 +360,7 @@ gulp.task( 'clearCache', function( done ) {
  */
 gulp.task(
 	'default',
-	gulp.parallel( 'styles', 'vendorsJS', 'frankCustomJS', 'images', browsersync, () => {
+	gulp.parallel( 'styles', 'vendorsJS', 'frankCustomJS', 'images', 'video', browsersync, () => {
 		gulp.watch( './*.html', reload ); // Reload on html file changes.
 		gulp.watch( config.watchStyles, gulp.parallel( 'styles' ) ); // Reload on SCSS file changes.
 		gulp.watch( config.watchJsVendor, gulp.series( 'vendorsJS', reload ) ); // Reload on vendorsJS file changes.

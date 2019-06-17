@@ -1,3 +1,79 @@
+//bootstrap vars
+$grid-columns: 24;
+$grid-gutter-width: 0px;
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 1043px,
+	xl: 1280px
+);
+
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 1000px,
+	xl: 1152px
+);
+
+@import "bootstrap-grid";
+
+
 body{
-    background-color:blue;
+    margin:0;
+    background-color:rgb(248, 248, 246);
+}
+
+.wrapper-hero{
+    position: relative;
+    width:100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.wrapper-video{
+    position: relative;
+    padding-top: (500 / 1400) * 100%;
+    video{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        width:100%;
+        max-width: 100%;
+        height: auto;
+        max-height: none;
+    }
+    &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        top:0;
+        left:0;
+        bottom:0;
+        right:10%;
+        background-color:rgba($color: white, $alpha: 0.7);
+        background: linear-gradient(90deg, rgba(248, 248, 246,0.8) 25%, rgba(248, 248, 246,0) 100%);
+        mix-blend-mode: hard-light;
+    }
+}
+
+.wrapper-headline{
+    position: absolute;
+    width: 50%;
+    height:100%;
+    left:0;
+    top:0;
+    display: flex;
+    align-items: center;
+    span{
+        font-family: Arial, Helvetica, sans-serif;
+        color:#f03f34;
+        position: relative;
+        width:100%;
+        display: block;
+        text-align: center;
+    }
 }
